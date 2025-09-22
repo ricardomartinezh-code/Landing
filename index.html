@@ -351,6 +351,155 @@
       border-color: rgba(15, 23, 42, 0.08);
     }
 
+    .social-proof {
+      display: grid;
+      gap: var(--space-lg);
+      padding: calc(var(--space) * 1.4);
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(150deg, rgba(37, 99, 235, 0.28), rgba(11, 18, 32, 0.78));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .social-proof__header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 60ch;
+    }
+
+    .social-proof__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: max-content;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      color: rgba(248, 250, 252, 0.85);
+    }
+
+    .social-proof__header h2 {
+      margin: 0;
+      font-size: clamp(26px, 3.6vw, 34px);
+      letter-spacing: -0.2px;
+    }
+
+    .social-proof__header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .social-proof__logos {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(160px, 1fr);
+      gap: var(--space);
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.85) 10%,
+        rgba(0, 0, 0, 0.85) 90%,
+        transparent 100%
+      );
+    }
+
+    .social-proof__logos:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .social-proof__logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--space) * 0.9);
+      min-height: 72px;
+      border-radius: calc(var(--radius) - 10px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(15, 23, 42, 0.65);
+      color: rgba(248, 250, 252, 0.88);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .social-proof__quotes {
+      display: grid;
+      gap: var(--space);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .social-proof__quote {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: calc(var(--space) * 1.1);
+      border-radius: calc(var(--radius) - 8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(15, 23, 42, 0.72);
+      box-shadow: var(--shadow);
+    }
+
+    .social-proof__quote blockquote {
+      margin: 0;
+      font-size: 15px;
+      color: rgba(248, 250, 252, 0.9);
+    }
+
+    .social-proof__quote blockquote i {
+      color: rgba(248, 250, 252, 0.6);
+      margin-right: 6px;
+    }
+
+    .social-proof__quote figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .social-proof__author {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    html[data-theme="light"] .social-proof {
+      background: linear-gradient(150deg, rgba(59, 130, 246, 0.18), rgba(255, 255, 255, 0.92));
+      border-color: rgba(15, 23, 42, 0.08);
+    }
+
+    html[data-theme="light"] .social-proof__eyebrow {
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--color-primary);
+    }
+
+    html[data-theme="light"] .social-proof__logo {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(15, 23, 42, 0.08);
+      color: var(--color-primary);
+    }
+
+    html[data-theme="light"] .social-proof__quote {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(15, 23, 42, 0.08);
+    }
+
+    html[data-theme="light"] .social-proof__quote blockquote {
+      color: var(--text);
+    }
+
     .site-footer {
       margin-top: auto;
       padding: calc(var(--space) * 1.4) clamp(var(--space), 6vw, var(--space-lg)) calc(var(--space) * 2.2);
@@ -423,6 +572,14 @@
       .hero-metric {
         min-width: 180px;
       }
+
+      .social-proof {
+        padding: calc(var(--space) * 1.2);
+      }
+
+      .social-proof__logos {
+        mask-image: none;
+      }
     }
 
     @media (max-width: 520px) {
@@ -442,6 +599,10 @@
 
       .landing-main {
         padding-inline: clamp(var(--space), 8vw, var(--space-lg));
+      }
+
+      .social-proof__logos {
+        grid-auto-columns: minmax(140px, 70%);
       }
     }
   </style>
@@ -537,6 +698,66 @@
         <h3>Seguridad y cumplimiento</h3>
         <p>Gestiona accesos por rol, auditorías completas y controles de datos para mantener la trazabilidad de cada contacto.</p>
       </article>
+    </section>
+    <section
+      class="social-proof"
+      aria-labelledby="socialProofTitle"
+      aria-describedby="socialProofDescription"
+      role="region"
+    >
+      <div class="social-proof__header">
+        <span class="social-proof__eyebrow"><i class="bi bi-shield-lock" aria-hidden="true"></i> Confianza</span>
+        <h2 id="socialProofTitle">Instituciones que ya reactivan leads con ReLead EDU</h2>
+        <p id="socialProofDescription">
+          Redes universitarias y equipos de admisiones utilizan la plataforma para coordinar campañas multicanal, priorizar
+          contactos y acompañar cada seguimiento en tiempo real.
+        </p>
+      </div>
+      <div
+        class="social-proof__logos"
+        role="list"
+        aria-label="Instituciones educativas que utilizan ReLead EDU"
+        tabindex="0"
+      >
+        <span class="social-proof__logo" role="listitem" aria-label="Universidad Horizonte">U. Horizonte</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Tecnológico Albor">Tec. Albor</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Instituto Delta">Instituto Delta</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Red Educativa Nova">Red Nova</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Colegio Integral Maya">Integral Maya</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Universidad Pacific">U. Pacific</span>
+      </div>
+      <div class="social-proof__quotes" role="list" aria-label="Testimonios breves de usuarios">
+        <figure class="social-proof__quote" role="listitem">
+          <blockquote>
+            <i class="bi bi-chat-quote" aria-hidden="true"></i> En dos ciclos duplicamos la reactivación de leads dormidos y
+            hoy sabemos qué campus requiere apoyo en cuestión de minutos.
+          </blockquote>
+          <figcaption>
+            <span class="social-proof__author">Daniela Ruiz</span>
+            <span>Directora de Atracción, Red Nova</span>
+          </figcaption>
+        </figure>
+        <figure class="social-proof__quote" role="listitem">
+          <blockquote>
+            <i class="bi bi-chat-quote" aria-hidden="true"></i> El tablero de riesgo nos permitió enfocar a los asesores en los
+            casos críticos y reducir el tiempo de respuesta a la mitad.
+          </blockquote>
+          <figcaption>
+            <span class="social-proof__author">Ernesto Camacho</span>
+            <span>Coordinador de Admisiones, Tec. Albor</span>
+          </figcaption>
+        </figure>
+        <figure class="social-proof__quote" role="listitem">
+          <blockquote>
+            <i class="bi bi-chat-quote" aria-hidden="true"></i> Automatizamos recordatorios y ahora cada seguimiento queda
+            documentado. Los reportes son clave para nuestras reuniones semanales.
+          </blockquote>
+          <figcaption>
+            <span class="social-proof__author">María Fernanda López</span>
+            <span>Gerente de CRM, Universidad Horizonte</span>
+          </figcaption>
+        </figure>
+      </div>
     </section>
   </main>
   <footer class="site-footer">

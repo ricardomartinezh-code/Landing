@@ -282,49 +282,112 @@
       color: #4ade80;
     }
 
-    .landing-features {
+    .demo-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: calc(var(--space) * 1.5);
-    }
-
-    .feature-card {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: calc(var(--space) * 1.1);
-      border-radius: 22px;
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      gap: var(--space-lg);
+      padding: clamp(var(--space-lg), 6vw, var(--space-xl));
+      border-radius: 28px;
+      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: var(--shadow);
     }
 
-    .feature-card i {
-      font-size: 24px;
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: rgba(37, 99, 235, 0.22);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .demo-intro {
+      display: grid;
+      gap: calc(var(--space) * 0.8);
     }
 
-    .feature-card h3 {
+    .demo-intro h2 {
       margin: 0;
-      font-size: 18px;
+      font-size: clamp(26px, 3.4vw, 32px);
+      letter-spacing: -0.2px;
+    }
+
+    .demo-intro p {
+      margin: 0;
+      max-width: 60ch;
+      color: color-mix(in srgb, currentColor 78%, rgba(226, 232, 240, 0.72) 22%);
+    }
+
+    .demo-form {
+      display: grid;
+      gap: var(--space);
+    }
+
+    .demo-grid {
+      display: grid;
+      gap: var(--space);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .demo-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .demo-field label {
+      font-weight: 600;
+      font-size: 14px;
       letter-spacing: 0.2px;
     }
 
-    .feature-card p {
-      margin: 0;
-      font-size: 14px;
-      color: var(--muted);
+    .demo-control {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(15, 23, 42, 0.42);
+      color: inherit;
+      font: inherit;
+      transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
 
-    html[data-theme="light"] .feature-card {
-      background: rgba(255, 255, 255, 0.86);
+    .demo-control:focus-visible {
+      outline: none;
+      border-color: rgba(37, 99, 235, 0.65);
+      background: rgba(15, 23, 42, 0.6);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.28);
+    }
+
+    .demo-control::placeholder {
+      color: rgba(226, 232, 240, 0.62);
+    }
+
+    .demo-note {
+      margin: 0;
+      font-size: 13px;
+      color: color-mix(in srgb, currentColor 70%, rgba(226, 232, 240, 0.5) 30%);
+    }
+
+    .demo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space);
+    }
+
+    .demo-status {
+      margin: 0;
+      font-size: 14px;
+      color: color-mix(in srgb, currentColor 82%, rgba(148, 163, 184, 0.72) 18%);
+    }
+
+    .demo-status strong {
+      font-weight: 700;
+    }
+
+    html[data-theme="light"] .demo-section {
+      background: rgba(255, 255, 255, 0.92);
       border-color: rgba(15, 23, 42, 0.08);
+    }
+
+    html[data-theme="light"] .demo-control {
+      background: rgba(248, 250, 252, 0.85);
+      border-color: rgba(15, 23, 42, 0.12);
+    }
+
+    html[data-theme="light"] .demo-control::placeholder {
+      color: rgba(71, 85, 105, 0.7);
     }
 
     .site-footer {
@@ -446,7 +509,7 @@
       </p>
       <div class="hero-cta">
         <a class="btn primary" href="./index.html"><i class="bi bi-speedometer2"></i> Entrar al CRM</a>
-        <a class="btn outline" href="#solicitar-demo"><i class="bi bi-calendar3"></i> Solicitar una demo</a>
+        <a class="btn outline" href="#solicitar-demo"><i class="bi bi-calendar3"></i> Agendar una demo</a>
       </div>
       <div class="hero-metrics" aria-label="Resultados destacados">
         <div class="hero-metrics__viewport" role="list">
@@ -495,22 +558,72 @@
         </div>
       </div>
     </section>
-    <section id="solicitar-demo" class="landing-features" aria-label="Motivos para elegir ReLead EDU">
-      <article class="feature-card">
-        <i class="bi bi-kanban" aria-hidden="true"></i>
-        <h3>Tableros pensados para asesores</h3>
-        <p>Organiza leads por etapa, urgencia y campañas activas para que cada jornada comience con prioridades claras.</p>
-      </article>
-      <article class="feature-card">
-        <i class="bi bi-robot" aria-hidden="true"></i>
-        <h3>Automatizaciones inteligentes</h3>
-        <p>Dispara recordatorios, envíos multicanal y asignaciones dinámicas desde un mismo flujo sin depender de TI.</p>
-      </article>
-      <article class="feature-card">
-        <i class="bi bi-shield-check" aria-hidden="true"></i>
-        <h3>Seguridad y cumplimiento</h3>
-        <p>Gestiona accesos por rol, auditorías completas y controles de datos para mantener la trazabilidad de cada contacto.</p>
-      </article>
+    <section id="solicitar-demo" class="demo-section" aria-labelledby="demoTitle">
+      <div class="demo-intro">
+        <h2 id="demoTitle">Agenda una demostración personalizada</h2>
+        <p>
+          Muéstranos cómo está conformado tu equipo y coordinaremos una sesión guiada para activar ReLead EDU en tu plantel con
+          los indicadores que más importan.
+        </p>
+      </div>
+      <form class="demo-form" action="https://example.com/solicitar-demo" method="post" aria-describedby="demoStatus">
+        <div class="demo-grid">
+          <div class="demo-field">
+            <label for="demoName">Nombre completo</label>
+            <input
+              class="demo-control"
+              type="text"
+              id="demoName"
+              name="nombre"
+              placeholder="Ana Torres"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div class="demo-field">
+            <label for="demoEmail">Correo institucional</label>
+            <input
+              class="demo-control"
+              type="email"
+              id="demoEmail"
+              name="correo"
+              placeholder="ana.torres@universidad.edu"
+              autocomplete="email"
+              inputmode="email"
+              required
+            />
+          </div>
+          <div class="demo-field">
+            <label for="demoCampus">Plantel o campus</label>
+            <input
+              class="demo-control"
+              type="text"
+              id="demoCampus"
+              name="plantel"
+              placeholder="Campus Tijuana"
+              autocomplete="organization"
+              required
+            />
+          </div>
+          <div class="demo-field">
+            <label for="demoTeam">Tamaño del equipo</label>
+            <select class="demo-control" id="demoTeam" name="tamano-equipo" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="1-5">1 a 5 personas</option>
+              <option value="6-10">6 a 10 personas</option>
+              <option value="11-20">11 a 20 personas</option>
+              <option value="21+">Más de 20 personas</option>
+            </select>
+          </div>
+        </div>
+        <p class="demo-note">Todos los campos son obligatorios para brindarte una demo adaptada a tus objetivos.</p>
+        <div class="demo-actions">
+          <button type="submit" class="btn primary"><i class="bi bi-send"></i> Solicitar demo</button>
+          <p id="demoStatus" class="demo-status" role="status" aria-live="polite">
+            <strong>Listo:</strong> nuestro equipo confirmará la agenda en menos de 24&nbsp;horas hábiles.
+          </p>
+        </div>
+      </form>
     </section>
   </main>
   <footer class="site-footer">

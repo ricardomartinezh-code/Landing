@@ -1,0 +1,6 @@
+services:
+  - type: static_site
+    name: relead-landing
+    env: static
+    buildCommand: ""
+    staticPublishPath: .

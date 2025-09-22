@@ -306,198 +306,112 @@
       color: #4ade80;
     }
 
-    .landing-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: calc(var(--space) * 1.5);
-    }
-
-    .feature-card {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: calc(var(--space) * 1.1);
-      border-radius: 22px;
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: var(--shadow);
-    }
-
-    .feature-card i {
-      font-size: 24px;
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: rgba(37, 99, 235, 0.22);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .feature-card h3 {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: 0.2px;
-    }
-
-    .feature-card p {
-      margin: 0;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    html[data-theme="light"] .feature-card {
-      background: rgba(255, 255, 255, 0.86);
-      border-color: rgba(15, 23, 42, 0.08);
-    }
-
-    .social-proof {
+    .demo-section {
       display: grid;
       gap: var(--space-lg);
-      padding: calc(var(--space) * 1.4);
-      border-radius: calc(var(--radius) + 6px);
-      background: linear-gradient(150deg, rgba(37, 99, 235, 0.28), rgba(11, 18, 32, 0.78));
+      padding: clamp(var(--space-lg), 6vw, var(--space-xl));
+      border-radius: 28px;
+      background: rgba(15, 23, 42, 0.78);
       border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: var(--shadow);
     }
 
-    .social-proof__header {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      max-width: 60ch;
+    .demo-intro {
+      display: grid;
+      gap: calc(var(--space) * 0.8);
     }
 
-    .social-proof__eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      width: max-content;
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.18);
-      color: rgba(248, 250, 252, 0.85);
-    }
-
-    .social-proof__header h2 {
+    .demo-intro h2 {
       margin: 0;
-      font-size: clamp(26px, 3.6vw, 34px);
+      font-size: clamp(26px, 3.4vw, 32px);
       letter-spacing: -0.2px;
     }
 
-    .social-proof__header p {
+    .demo-intro p {
       margin: 0;
-      color: var(--muted);
-      font-size: 15px;
+      max-width: 60ch;
+      color: color-mix(in srgb, currentColor 78%, rgba(226, 232, 240, 0.72) 22%);
     }
 
-    .social-proof__logos {
+    .demo-form {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(160px, 1fr);
       gap: var(--space);
-      overflow-x: auto;
-      padding-bottom: 6px;
-      scrollbar-width: thin;
-      mask-image: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(0, 0, 0, 0.85) 10%,
-        rgba(0, 0, 0, 0.85) 90%,
-        transparent 100%
-      );
     }
 
-    .social-proof__logos:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
+    .demo-grid {
+      display: grid;
+      gap: var(--space);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
-    .social-proof__logo {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: calc(var(--space) * 0.9);
-      min-height: 72px;
-      border-radius: calc(var(--radius) - 10px);
+    .demo-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .demo-field label {
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+    }
+
+    .demo-control {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 16px;
       border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(15, 23, 42, 0.65);
-      color: rgba(248, 250, 252, 0.88);
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-      text-align: center;
+      background: rgba(15, 23, 42, 0.42);
+      color: inherit;
+      font: inherit;
+      transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .social-proof__quotes {
-      display: grid;
-      gap: var(--space);
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    .demo-control:focus-visible {
+      outline: none;
+      border-color: rgba(37, 99, 235, 0.65);
+      background: rgba(15, 23, 42, 0.6);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.28);
     }
 
-    .social-proof__quote {
+    .demo-control::placeholder {
+      color: rgba(226, 232, 240, 0.62);
+    }
+
+    .demo-note {
       margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      padding: calc(var(--space) * 1.1);
-      border-radius: calc(var(--radius) - 8px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(15, 23, 42, 0.72);
-      box-shadow: var(--shadow);
-    }
-
-    .social-proof__quote blockquote {
-      margin: 0;
-      font-size: 15px;
-      color: rgba(248, 250, 252, 0.9);
-    }
-
-    .social-proof__quote blockquote i {
-      color: rgba(248, 250, 252, 0.6);
-      margin-right: 6px;
-    }
-
-    .social-proof__quote figcaption {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
       font-size: 13px;
-      color: var(--muted);
+      color: color-mix(in srgb, currentColor 70%, rgba(226, 232, 240, 0.5) 30%);
     }
 
-    .social-proof__author {
+    .demo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space);
+    }
+
+    .demo-status {
+      margin: 0;
+      font-size: 14px;
+      color: color-mix(in srgb, currentColor 82%, rgba(148, 163, 184, 0.72) 18%);
+    }
+
+    .demo-status strong {
       font-weight: 700;
-      color: var(--text);
     }
 
-    html[data-theme="light"] .social-proof {
-      background: linear-gradient(150deg, rgba(59, 130, 246, 0.18), rgba(255, 255, 255, 0.92));
-      border-color: rgba(15, 23, 42, 0.08);
-    }
-
-    html[data-theme="light"] .social-proof__eyebrow {
-      background: rgba(37, 99, 235, 0.12);
-      color: var(--color-primary);
-    }
-
-    html[data-theme="light"] .social-proof__logo {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(15, 23, 42, 0.08);
-      color: var(--color-primary);
-    }
-
-    html[data-theme="light"] .social-proof__quote {
+    html[data-theme="light"] .demo-section {
       background: rgba(255, 255, 255, 0.92);
       border-color: rgba(15, 23, 42, 0.08);
     }
 
-    html[data-theme="light"] .social-proof__quote blockquote {
-      color: var(--text);
+    html[data-theme="light"] .demo-control {
+      background: rgba(248, 250, 252, 0.85);
+      border-color: rgba(15, 23, 42, 0.12);
+    }
+
+    html[data-theme="light"] .demo-control::placeholder {
+      color: rgba(71, 85, 105, 0.7);
     }
 
     .site-footer {
@@ -630,10 +544,8 @@
         oportunidades en pausa sin fricción.
       </p>
       <div class="hero-cta">
-        <a class="btn primary" href="https://app.relead.com.mx/" target="_blank" rel="noopener"
-          ><i class="bi bi-speedometer2"></i> Acceder</a
-        >
-        <a class="btn outline" href="#solicitar-demo"><i class="bi bi-calendar3"></i> Solicitar una demo</a>
+        <a class="btn primary" href="./index.html"><i class="bi bi-speedometer2"></i> Entrar al CRM</a>
+        <a class="btn outline" href="#solicitar-demo"><i class="bi bi-calendar3"></i> Agendar una demo</a>
       </div>
       <div class="hero-metrics" aria-label="Resultados destacados">
         <div class="hero-metrics__viewport" role="list">
@@ -682,22 +594,72 @@
         </div>
       </div>
     </section>
-    <section id="solicitar-demo" class="landing-features" aria-label="Motivos para elegir ReLead EDU">
-      <article class="feature-card">
-        <i class="bi bi-kanban" aria-hidden="true"></i>
-        <h3>Tableros pensados para asesores</h3>
-        <p>Organiza leads por etapa, urgencia y campañas activas para que cada jornada comience con prioridades claras.</p>
-      </article>
-      <article class="feature-card">
-        <i class="bi bi-robot" aria-hidden="true"></i>
-        <h3>Automatizaciones inteligentes</h3>
-        <p>Dispara recordatorios, envíos multicanal y asignaciones dinámicas desde un mismo flujo sin depender de TI.</p>
-      </article>
-      <article class="feature-card">
-        <i class="bi bi-shield-check" aria-hidden="true"></i>
-        <h3>Seguridad y cumplimiento</h3>
-        <p>Gestiona accesos por rol, auditorías completas y controles de datos para mantener la trazabilidad de cada contacto.</p>
-      </article>
+    <section id="solicitar-demo" class="demo-section" aria-labelledby="demoTitle">
+      <div class="demo-intro">
+        <h2 id="demoTitle">Agenda una demostración personalizada</h2>
+        <p>
+          Muéstranos cómo está conformado tu equipo y coordinaremos una sesión guiada para activar ReLead EDU en tu plantel con
+          los indicadores que más importan.
+        </p>
+      </div>
+      <form class="demo-form" action="https://example.com/solicitar-demo" method="post" aria-describedby="demoStatus">
+        <div class="demo-grid">
+          <div class="demo-field">
+            <label for="demoName">Nombre completo</label>
+            <input
+              class="demo-control"
+              type="text"
+              id="demoName"
+              name="nombre"
+              placeholder="Ana Torres"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div class="demo-field">
+            <label for="demoEmail">Correo institucional</label>
+            <input
+              class="demo-control"
+              type="email"
+              id="demoEmail"
+              name="correo"
+              placeholder="ana.torres@universidad.edu"
+              autocomplete="email"
+              inputmode="email"
+              required
+            />
+          </div>
+          <div class="demo-field">
+            <label for="demoCampus">Plantel o campus</label>
+            <input
+              class="demo-control"
+              type="text"
+              id="demoCampus"
+              name="plantel"
+              placeholder="Campus Tijuana"
+              autocomplete="organization"
+              required
+            />
+          </div>
+          <div class="demo-field">
+            <label for="demoTeam">Tamaño del equipo</label>
+            <select class="demo-control" id="demoTeam" name="tamano-equipo" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="1-5">1 a 5 personas</option>
+              <option value="6-10">6 a 10 personas</option>
+              <option value="11-20">11 a 20 personas</option>
+              <option value="21+">Más de 20 personas</option>
+            </select>
+          </div>
+        </div>
+        <p class="demo-note">Todos los campos son obligatorios para brindarte una demo adaptada a tus objetivos.</p>
+        <div class="demo-actions">
+          <button type="submit" class="btn primary"><i class="bi bi-send"></i> Solicitar demo</button>
+          <p id="demoStatus" class="demo-status" role="status" aria-live="polite">
+            <strong>Listo:</strong> nuestro equipo confirmará la agenda en menos de 24&nbsp;horas hábiles.
+          </p>
+        </div>
+      </form>
     </section>
     <section
       class="social-proof"

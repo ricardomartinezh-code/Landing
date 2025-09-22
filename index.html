@@ -3,6 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="ReLead EDU ayuda a universidades a reactivar leads dormidos con automatizaciones, analítica accionable y seguimiento unificado para cada plantel."
+  />
+  <meta http-equiv="content-language" content="es-MX" />
+  <meta name="author" content="Equipo ReLead EDU" />
+  <link rel="canonical" href="https://relead.edu/" />
+  <meta property="og:title" content="ReLead EDU — Plataforma de reactivación" />
+  <meta
+    property="og:description"
+    content="Centraliza seguimiento, priorización y comunicación para recuperar leads potenciales en menos tiempo."
+  />
+  <meta property="og:image" content="https://relead.edu/icon-unidep180.png" />
+  <meta property="og:url" content="https://relead.edu/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ReLead EDU — Plataforma de reactivación" />
+  <meta
+    name="twitter:description"
+    content="Centraliza seguimiento, priorización y comunicación para recuperar leads potenciales en menos tiempo."
+  />
+  <meta name="twitter:image" content="https://relead.edu/icon-unidep180.png" />
+  <meta name="twitter:url" content="https://relead.edu/" />
+  <meta name="twitter:image:alt" content="Logotipo de ReLead EDU" />
   <title>ReLead EDU — Plataforma de reactivación</title>
   <link rel="icon" type="image/png" href="./icon-unidep180.png" />
   <link rel="apple-touch-icon" href="./icon-unidep180.png?v=1" />
@@ -462,6 +486,14 @@
       .hero-metric {
         min-width: 180px;
       }
+
+      .social-proof {
+        padding: calc(var(--space) * 1.2);
+      }
+
+      .social-proof__logos {
+        mask-image: none;
+      }
     }
 
     @media (max-width: 520px) {
@@ -482,6 +514,10 @@
       .landing-main {
         padding-inline: clamp(var(--space), 8vw, var(--space-lg));
       }
+
+      .social-proof__logos {
+        grid-auto-columns: minmax(140px, 70%);
+      }
     }
   </style>
 </head>
@@ -492,7 +528,7 @@
         <img src="./icon-unidep180.png" alt="Logotipo de ReLead EDU" width="46" height="46" />
         <span>ReLead EDU</span>
       </a>
-      <a class="header-login" href="./index.html">Ingresar al CRM</a>
+      <a class="header-login" href="https://app.relead.com.mx/" target="_blank" rel="noopener">Acceder</a>
     </div>
   </header>
   <main class="landing-main">
@@ -624,6 +660,66 @@
           </p>
         </div>
       </form>
+    </section>
+    <section
+      class="social-proof"
+      aria-labelledby="socialProofTitle"
+      aria-describedby="socialProofDescription"
+      role="region"
+    >
+      <div class="social-proof__header">
+        <span class="social-proof__eyebrow"><i class="bi bi-shield-lock" aria-hidden="true"></i> Confianza</span>
+        <h2 id="socialProofTitle">Instituciones que ya reactivan leads con ReLead EDU</h2>
+        <p id="socialProofDescription">
+          Redes universitarias y equipos de admisiones utilizan la plataforma para coordinar campañas multicanal, priorizar
+          contactos y acompañar cada seguimiento en tiempo real.
+        </p>
+      </div>
+      <div
+        class="social-proof__logos"
+        role="list"
+        aria-label="Instituciones educativas que utilizan ReLead EDU"
+        tabindex="0"
+      >
+        <span class="social-proof__logo" role="listitem" aria-label="Universidad Horizonte">U. Horizonte</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Tecnológico Albor">Tec. Albor</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Instituto Delta">Instituto Delta</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Red Educativa Nova">Red Nova</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Colegio Integral Maya">Integral Maya</span>
+        <span class="social-proof__logo" role="listitem" aria-label="Universidad Pacific">U. Pacific</span>
+      </div>
+      <div class="social-proof__quotes" role="list" aria-label="Testimonios breves de usuarios">
+        <figure class="social-proof__quote" role="listitem">
+          <blockquote>
+            <i class="bi bi-chat-quote" aria-hidden="true"></i> En dos ciclos duplicamos la reactivación de leads dormidos y
+            hoy sabemos qué campus requiere apoyo en cuestión de minutos.
+          </blockquote>
+          <figcaption>
+            <span class="social-proof__author">Daniela Ruiz</span>
+            <span>Directora de Atracción, Red Nova</span>
+          </figcaption>
+        </figure>
+        <figure class="social-proof__quote" role="listitem">
+          <blockquote>
+            <i class="bi bi-chat-quote" aria-hidden="true"></i> El tablero de riesgo nos permitió enfocar a los asesores en los
+            casos críticos y reducir el tiempo de respuesta a la mitad.
+          </blockquote>
+          <figcaption>
+            <span class="social-proof__author">Ernesto Camacho</span>
+            <span>Coordinador de Admisiones, Tec. Albor</span>
+          </figcaption>
+        </figure>
+        <figure class="social-proof__quote" role="listitem">
+          <blockquote>
+            <i class="bi bi-chat-quote" aria-hidden="true"></i> Automatizamos recordatorios y ahora cada seguimiento queda
+            documentado. Los reportes son clave para nuestras reuniones semanales.
+          </blockquote>
+          <figcaption>
+            <span class="social-proof__author">María Fernanda López</span>
+            <span>Gerente de CRM, Universidad Horizonte</span>
+          </figcaption>
+        </figure>
+      </div>
     </section>
   </main>
   <footer class="site-footer">
